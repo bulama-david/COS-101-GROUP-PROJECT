@@ -13,7 +13,24 @@ class PasswordGenerator(tk.Tk):
 
 
     def create_widgets(self):
-        label = tk.Label()
+        # Label for the password length
+        label = tk.Label(self, text="Password Length:", font=("Arial", 18))
+        label.grid(row=0, column=0)
+
+        # Entry for the password length
+        self.length_var = tk.IntVar()
+        entry = tk.Entry(self, textvariable=self.length_var, font=("Arial", 18), width=5)
+        entry.grid(row=0, column=1)
+
+        # Button to generate the password
+        button = tk.Button(self, text="Generate", font=("Arial", 18), width=10, height=2, command=self.generate_password)
+        button.grid(row=0, column=2)
+
+        # Label to display the generated password
+        self.password_var = tk.StringVar()
+        password_label = tk.Label(self, textvariable=self.password_var, font=("Arial", 18))
+        password_label.grid(row=1, column=0, columnspan=3)
+
 
     def generate_password(self):
         length = self.length_var.get()
