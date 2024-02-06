@@ -5,6 +5,12 @@ import string
 class PasswordGenerator(tk.Tk):
     def __init__(self):
         super().__init__()
+        
+        self.title("Password Generator")
+        self.geometry("400x400")
+
+        self.create_widgets()
+
 
     def create_widgets(self):
         label = tk.Label()
