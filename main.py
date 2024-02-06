@@ -34,7 +34,7 @@ class PasswordGenerator(tk.Tk):
 
     def generate_password(self):
         length = self.length_var.get()
-                if length < 1:
+        if length < 1:
             self.password_var.set("Error: Length must be at least 1")
         else:
             password = "".join(random.choices(string.ascii_letters + string.digits + string.punctuation, k=length))
